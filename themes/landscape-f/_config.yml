@@ -1,0 +1,61 @@
+# Header
+menu:
+  home: /
+  archives: /archives
+rss: /atom.xml
+github: https://github.com/johnwonder
+
+# Content
+excerpt_link: Read More
+fancybox: true
+
+# Sidebar
+sidebar: right
+widgets:
+- about_me
+- category
+- tag
+- tagcloud
+- archive
+- calendar
+- recent_posts
+- duoshuo_recent_comments
+- links
+
+# Miscellaneous
+google_analytics:
+baidu_tongji:
+favicon: /favicon.ico
+twitter:
+google_plus:
+fb_admins:
+fb_app_id:
+
+# Toc
+toc:
+  article: true   ## show contents in article.
+  aside: true     ## show contents in aside.
+# Scroll to top
+go_top: true
+
+# duoshuo
+duoshuo_shortname: gitjohn
+
+# baidu share
+baidushare: true
+
+# blogroll
+links:
+- name: 404 page
+  link: http://yibo.iyiyun.com/js/yibo404/key/1
+
+# about me
+about_me:
+  title:
+  gravatar: a@abc.com
+  avatar: /images/github.jpg
+  texts:
+  - Hi,I'm johnwonder.
+
+# display updated
+display_updated: true
