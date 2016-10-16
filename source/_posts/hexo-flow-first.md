@@ -94,3 +94,63 @@ console.log(alias);
 	};
  ```
 
+ ## aabrev源码分析
+
+ ```js
+	function abbrev (list) {
+	  //如果参数不等于1 或者参数list不是数组
+	  //那么就调用Array的slice方法
+	  //返回一个新的数组，包含从 start 到 end （不包括该元素）的 arrayObject 中的元素。
+	  if (arguments.length !== 1 || !Array.isArray(list)) {
+	  	//返回新的list数组
+	    list = Array.prototype.slice.call(arguments, 0)
+	  }
+	  //放入args数组
+	  for (var i = 0, l = list.length, args = [] ; i < l ; i ++) {
+	    args[i] = typeof list[i] === "string" ? list[i] : String(list[i])
+	  }
+
+	  //排序，调用lexSort方法
+	  // sort them lexicographically, so that they're next to their nearest kin
+	  args = args.sort(lexSort)
+
+	  // walk through each, seeing how much it has in common with the next and previous
+	  var abbrevs = {}
+	    , prev = ""
+	  for (var i = 0, l = args.length ; i < l ; i ++) {
+	    var current = args[i]
+	      , next = args[i + 1] || ""
+	      , nextMatches = true
+	      , prevMatches = true
+	    if (current === next) continue
+	    for (var j = 0, cl = current.length ; j < cl ; j ++) {
+	      var curChar = current.charAt(j)
+	      //跟next和prev元素内的字符做比较，如果都不相等，那么就直接跳出这个元素的比较循环
+	      nextMatches = nextMatches && curChar === next.charAt(j)
+	      prevMatches = prevMatches && curChar === prev.charAt(j)
+	      if (!nextMatches && !prevMatches) {
+	        j ++
+	        break
+	      }
+	    }
+	    prev = current//把prev指向当前args元素
+	    if (j === cl) {
+	      abbrevs[current] = current
+	      continue
+	    }
+	    //比如abc a ab abc
+	    for (var a = current.substr(0, j) ; j <= cl ; j ++) {
+	      abbrevs[a] = current
+	      a += current.charAt(j)
+	    }
+	  }
+	  return abbrevs
+	}
+
+	function lexSort (a, b) {
+	  return a === b ? 0 : a > b ? 1 : -1
+	}
+ ```
+
+ 可以尝试写个C#的版本。。
+
