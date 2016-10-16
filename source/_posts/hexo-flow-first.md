@@ -29,7 +29,7 @@ Isaac Z. Schlueter ：npm inventor and CEO. Early contributor and former BDFL of
     [Ryan Dahl](https://github.com/ry)(跟PAAS Heroku 有关)
     [Isaac Schlueter](https://github.com/isaacs) (在Oakland CA 奥克兰（美国加利福尼亚州西部港市）)
     [Bert Belder](https://github.com/piscisaureus) (为node提供windows支持的主要开发者)
-    [TJ Holowaychuk](大名鼎鼎的TJ,express,jade的作者)
+    [TJ Holowaychuk](https://github.com/visionmedia) (大名鼎鼎的TJ,express,jade的作者)
     [Tim Caswell](https://github.com/creationix) (connect的作者)
     [Felix Geisendörfer](https://github.com/felixge) ( works on projects node-formidable, node-mysql 在Berlin, Germany （德国柏林）)
     [Mikeal Rogers](https://github.com/mikeal) (request的作者，在旧金山 San Francisco)
