@@ -53,14 +53,14 @@ var store = {
 };
 
  console.log(Object.keys(store));
-//print array 
+//print array
 //[ 'new', 'deploy', 'publish' ]
 
 var alias = abbrev(Object.keys(store));
 
 console.log(alias);
 
-//print 
+//print
 console.log(alias);
 
 { d: 'deploy',
@@ -94,7 +94,7 @@ console.log(alias);
 	};
  ```
 
- ## aabrev源码分析
+ ## abbrev源码分析
 
  ```js
 	function abbrev (list) {
@@ -153,4 +153,3 @@ console.log(alias);
  ```
 
  可以尝试写个C#的版本。。
-

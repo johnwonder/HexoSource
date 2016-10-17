@@ -5,9 +5,10 @@ tags:
 
 ##   C# 泛型委托书写
 
-### 
+###
 
-{% codeblock lang:javascript %}
+{% codeblock lang:csharp %}
+
 	//先声明泛型委托
 	public delegate T  GetHandler<T>(string propertyName,T t);
 
