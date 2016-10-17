@@ -111,7 +111,7 @@ console.log(alias);
 	  }
 
 	  //排序，调用lexSort方法
-	  // sort them lexicographically, so that they're next to their nearest kin
+	  // sort them lexicographically(按字典顺序), so that they're next to their nearest kin
 	  args = args.sort(lexSort)
 
 	  // walk through each, seeing how much it has in common with the next and previous
@@ -123,6 +123,7 @@ console.log(alias);
 	      , nextMatches = true
 	      , prevMatches = true
 	    if (current === next) continue
+			//循环结束j要么找到不等于前后的字符 要么就是整个当前字符串
 	    for (var j = 0, cl = current.length ; j < cl ; j ++) {
 	      var curChar = current.charAt(j)
 	      //跟next和prev元素内的字符做比较，如果都不相等，那么就直接跳出这个元素的比较循环
