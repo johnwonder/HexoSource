@@ -3,7 +3,7 @@ date: 2016-08-30 23:06:01
 tags:
 ---
 
-{% codeblock lang:csharp %}
+```
  string[] strs= new string[100];
             for (int i = 0; i < 100; i++)
 			{
@@ -97,13 +97,13 @@ tags:
             //    {
             //        Console.WriteLine(intList[i]);
             //    }
-                
+
             //}
             Console.Read();
 
 
            Task task0 = Task.Run(() =>
-            
+
            {
                for (int i = 0; i < 100; i++)
                 {
@@ -111,7 +111,7 @@ tags:
                        // Thread.Sleep(1000);
                         Console.WriteLine("Task:add:" +" index:"+i+" "+ strs[i]);
                         return strs[i];
-                    
+
                     }, (k, v) =>
                     {
                         Console.WriteLine("Task:update index:"+i+":"+ v + " to " + strs[i]);
@@ -150,7 +150,7 @@ tags:
                         Console.WriteLine("Task1:remove:" + " index:" + i + " empty");
                     }
 
-                   
+
                 }
             });
 
@@ -177,4 +177,4 @@ tags:
            //https://msdn.microsoft.com/zh-cn/library/dd997369.aspx
           // task1.Start();
             Console.Read();
-{% endcodeblock %}
+```

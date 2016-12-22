@@ -8,7 +8,7 @@ tags: jquery parents
 ## jquery1.0 版本的 静态parents函数
 
 ### jQuery.parents:
-{% codeblock lang:javascript %}
+```js
 	parents: function( elem ){
 		var matched = [];
 		var cur = elem.parentNode;
@@ -18,7 +18,7 @@ tags: jquery parents
 		}
 		return matched;
 	},
-{% endcodeblock %}
+```
 
 通过jQuery.macros.axis来调用：
 
@@ -34,7 +34,7 @@ tags: jquery parents
 		});
 ```
 
-### 
+###
 
 ```javascript
 	jQuery.macros = {

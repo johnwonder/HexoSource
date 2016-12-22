@@ -8,7 +8,7 @@ tags: hexo console
 ### loadModule
 
 hexo.js中定义了context.js，用来实例化hexo对象。
-{% codeblock lang:javascript %}
+```
  	return findPkg(cwd, args).then(function(path) {
     	if (!path) return;
 
@@ -28,10 +28,10 @@ hexo.js中定义了context.js，用来实例化hexo对象。
 
 	    return hexo.init();
 	  })
-{% endcodeblock %}
+```
 
 ### hexo.init()
-{% codeblock lang:javascript %}
+```
 	Hexo.prototype.init = function(){
 	  var self = this;
 
@@ -62,7 +62,7 @@ hexo.js中定义了context.js，用来实例化hexo对象。
 	    self.emit('ready');
 	  });
 	};
-{% endcodeblock %}
+```
 
 `require('../plugins/console')(this);` 会加载plugins/console目录下的index.js文件,
 ```js

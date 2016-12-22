@@ -8,16 +8,15 @@ tags: jquery map
 ### filter函数
 
 1.0源码:
-{% codeblock lang:javascript %}
-
+```js
 	map: function(elems, fn) {
 		// If a string is passed in for the function, make a function
 		// for it (a handy shortcut)
 		if ( fn.constructor == String )
 			fn = new Function("a","return " + fn);
-		
+
 		var result = [];//初始化一个空数组
-		
+
 		// Go through the array, translating each of the items to their
 		// new value (or values).
 		for ( var i = 0; i < elems.length; i++ ) {
@@ -34,4 +33,4 @@ tags: jquery map
 
 		return result;
 	}
-{% endcodeblock %}
+```

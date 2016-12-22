@@ -9,7 +9,7 @@ tags: hexo context.js Context
 
 hexo.js中定义了context.js，用来实例化hexo对象。
 
-{% codeblock lang:javascript %}
+```js
 	function Context(base, args) {
 	  base = base || process.cwd();
 	  args = args || {};
@@ -65,4 +65,4 @@ hexo.js中定义了context.js，用来实例化hexo对象。
 	};
 
 	module.exports = Context;
-{% endcodeblock %}
+```

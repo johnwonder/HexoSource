@@ -8,7 +8,7 @@ tags:
 ###  CompositionStrategy类
 
 CompositionStrategy中跟控制器相关的就是Compose函数。看代码：
-{% codeblock lang:c# %}
+```
  var allRoutes = new List<RouteDescriptor>();
  var controllers = BuildBlueprint(features, IsController, BuildController, excludedTypes);
 
@@ -27,14 +27,14 @@ CompositionStrategy中跟控制器相关的就是Compose函数。看代码：
                 ControllerName = controllerName,
             };
         }
- {% endcodeblock %}
+```
 
 ## ShellContainerFactory类:
 然后再通过ShellContainerFactory 加入orchard容器中
 
-{% codeblock lang:c# %}
+```
       foreach (var item in blueprint.Controllers) {
-                        //这里很关键是通过AreaName和ControllerName注入 
+                        //这里很关键是通过AreaName和ControllerName注入
                         var serviceKeyName = (item.AreaName + "/" + item.ControllerName).ToLowerInvariant();
                         var serviceKeyType = item.Type;
                         RegisterType(builder, item)
@@ -52,13 +52,14 @@ CompositionStrategy中跟控制器相关的就是Compose函数。看代码：
                                     controller.ActionInvoker = (IActionInvoker)e.Context.ResolveService(new TypedService(typeof(IActionInvoker)));
                             });
                     }
-{% endcodeblock %}
+```
 
 ## OrchardControllerFactory
 
 然后控制器工厂OrchardControllerFactory类通过RouteData寻找Controller
 路由数据就是在ShellRoute中找到匹配的路由数据
-{% codeblock lang:c# %}
+
+```
       protected override Type GetControllerType(RequestContext requestContext, string controllerName) {
             var routeData = requestContext.RouteData;
 
@@ -77,4 +78,4 @@ CompositionStrategy中跟控制器相关的就是Compose函数。看代码：
 
             return null;
         }
-{% endcodeblock %}
+```

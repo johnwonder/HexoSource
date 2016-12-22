@@ -8,7 +8,7 @@ tags:
 ### each函数
 
 1.0源码:
-{% codeblock lang:javascript %}
+```js
 	each: function( obj, fn, args ) {
 		if ( obj.length == undefined )//如果不是数组
 			for ( var i in obj )
@@ -18,11 +18,11 @@ tags:
 				fn.apply( obj[i], args || [i, obj[i]] );
 		return obj;
 	}
-{% endcodeblock %}
+```
 遍历obj对象，直接用fn.apply调用。
 
 再看1.2.6源码：
-{% codeblock lang:javascript %}
+```js
 	each: function( object, callback, args ) {
 		var name, i = 0, length = object.length;
 
@@ -49,6 +49,6 @@ tags:
 
 		return object;
 	}
-{% endcodeblock %}
+```
 最主要是对第三个参数的调用做修改优化,1.0直接 args || [i,obj[i]],而1.2.6
 分开判断 ，在没有args的情况下 用call调用。而且把object.length 先保存在length变量中。

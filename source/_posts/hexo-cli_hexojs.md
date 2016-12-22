@@ -8,23 +8,24 @@ tags: hexo hexo-cli
 ### hexo入口函数
 
 package.json中定义了
-{% codeblock lang:javascript %}
+```js
   "bin": {
     "hexo": "./bin/hexo"
   }
-{% endcodeblock %}
+```
 所以到bin目录下的hexo
-{% codeblock lang:javascript %}
+```
 #!/usr/bin/env node
 
 'use strict';
 
 require('../lib/hexo')();
-{% endcodeblock %}
+```
+
 再到lib目录下的hexo.js，发现定义了module.exports= entry,那么找到entry方法
 
 在没有找到hexo模块的情况下什么命令都不起作用
-{% codeblock lang:javascript %}
+```js
 	function entry(cwd, args) {
 	  cwd = cwd || process.cwd();
 	  //如果没有输入cwd那么就获取运行当前脚本的工作目录的路径
@@ -90,7 +91,7 @@ require('../lib/hexo')();
 	    });
 	  }).catch(handleError);
 	}
-{% endcodeblock %}
+```
 
 [process](http://www.css88.com/archives/4548)
 [NodeJs中的EventEmitter](http://biyeah.iteye.com/blog/1308954)

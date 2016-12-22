@@ -7,8 +7,7 @@ tags: jquery filter
 ### filter函数
 
 1.0源码:
-{% codeblock lang:javascript %}
-	
+```js
 	expr: {
 		"": "m[2]== '*'||a.nodeName.toUpperCase()==m[2].toUpperCase()",
 		"#": "a.getAttribute('id')&&a.getAttribute('id')==m[2]",
@@ -22,23 +21,23 @@ tags: jquery filter
 			last: "i==r.length-1",
 			even: "i%2==0",
 			odd: "i%2",
-			
+
 			// Child Checks
 			"first-child": "jQuery.sibling(a,0).cur",
 			"last-child": "jQuery.sibling(a,0).last",
 			"only-child": "jQuery.sibling(a).length==1",
-			
+
 			// Parent Checks
 			parent: "a.childNodes.length",
 			empty: "!a.childNodes.length",
-			
+
 			// Text Check
 			contains: "(a.innerText||a.innerHTML).indexOf(m[3])>=0",
-			
+
 			// Visibility
 			visible: "a.type!='hidden'&&jQuery.css(a,'display')!='none'&&jQuery.css(a,'visibility')!='hidden'",
 			hidden: "a.type=='hidden'||jQuery.css(a,'display')=='none'||jQuery.css(a,'visibility')=='hidden'",
-			
+
 			// Form elements
 			enabled: "!a.disabled",
 			disabled: "a.disabled",
@@ -75,14 +74,14 @@ tags: jquery filter
 	//r为 元素集合
 	filter: function(t,r,not) {
 		// Figure out if we're doing regular, or inverse, filtering
-		//not 为undefined的时候 not!==false返回true 
+		//not 为undefined的时候 not!==false返回true
 		//所以g = jQuery.grep
 		//grep静态函数第三个参数为true的话就返回不满足条件的新的元素
 		//t为:not(.example)的时候就会递归调用
 		//最终调用的是grep函数
 		var g = not !== false ? jQuery.grep :
 			function(a,f) {return jQuery.grep(a,f,true);};
-		
+
 		//not(.example) 符合正则
 		while ( t && /^[a-z[({<*:.#]/i.test(t) ) {
 
@@ -112,7 +111,7 @@ tags: jquery filter
 					break;//这里就退出循环了
 				}
 			}
-	
+
 			// :not() is a special case that can be optomized by
 			// keeping it out of the expression list
 			//:not(.example)
@@ -122,23 +121,23 @@ tags: jquery filter
 			//m[3] = .example
 			if ( m[1] == ":" && m[2] == "not" )
 				r = jQuery.filter(m[3],r,false).r;//递归下 到里面grep就是为包装grep的函数了
-			
+
 			// Otherwise, find the expression to execute
 			//m[0] = .example
 			//m[1] = .
 			//m[2] = example
 			else {
-				
+
 				//m[1]为.那么 在expr数组中就返回jQuery.className.has(a,m[2])
 				var f = jQuery.expr[m[1]];
 				if ( f.constructor != String )
 					f = jQuery.expr[m[1]][m[2]];
-					
+
 				// Build a custom macro to enclose it
-				eval("f = function(a,i){" + 
-					( m[1] == "@" ? "z=jQuery.attr(a,m[3]);" : "" ) + 
+				eval("f = function(a,i){" +
+					( m[1] == "@" ? "z=jQuery.attr(a,m[3]);" : "" ) +
 					"return " + f + "}");
-				
+
 				// Execute it against the current filter
 				//f 为 function(a,i){
 				//	return jQuery.className.has(a,m[2]) //m[2] 此时为'example'
@@ -148,7 +147,7 @@ tags: jquery filter
 				r = g( r, f );
 			}
 		}
-	
+
 		// Return an array of filtered elements (r)
 		// and the modified expression string (t)
 		return { r: r, t: t };
@@ -171,4 +170,4 @@ tags: jquery filter
 			return new RegExp("(^|\\s)" + a + "(\\s|$)").test(e);
 		}
 	},
-{% endcodeblock %}
+```

@@ -8,7 +8,8 @@ tags:
 ###  ShellDescriptorManager类
 
 ShellDescritorManager有个UpdateShellDescriptor方法
-{% codeblock lang:c# %}
+
+```
 public void UpdateShellDescriptor(int priorSerialNumber, IEnumerable<ShellFeature> enabledFeatures, IEnumerable<ShellParameter> parameters) {
             ShellDescriptorRecord shellDescriptorRecord = GetDescriptorRecord();
             var serialNumber = shellDescriptorRecord == null ? 0 : shellDescriptorRecord.SerialNumber;
@@ -41,12 +42,13 @@ public void UpdateShellDescriptor(int priorSerialNumber, IEnumerable<ShellFeatur
 
             _events.Changed(GetShellDescriptorFromRecord(shellDescriptorRecord), _shellSettings.Name);
         }
-{% endcodeblock %}
+```
 
 看最后的_events.Changed 是调用了IShellDescriptorManagerEventHandler接口的Changed方法。
 那为什么一个EventHandler会命名为_events呢？答案在EventsRegistrationSource类中
 ###  EventsRegistrationSource类
-{% codeblock lang:c# %}
+
+```
 public IEnumerable<IComponentRegistration> RegistrationsFor(Service service, Func<Service, IEnumerable<IComponentRegistration>> registrationAccessor) {
             var serviceWithType = service as IServiceWithType;
             if (serviceWithType == null)
@@ -78,13 +80,14 @@ public IEnumerable<IComponentRegistration> RegistrationsFor(Service service, Fun
 
             yield return rb.CreateRegistration();
         }
-{% endcodeblock %}
+```
 
 在构造器中指定了拦截器 EventsInterceptor ，拦截器又传入了EventBus.
 
 ###  EventsInterceptor类
 我们来看看拦截方法是怎样的：
-{% codeblock lang:c# %}
+
+```
         public void Intercept(IInvocation invocation) {
             var interfaceName = invocation.Method.DeclaringType.Name;
             var methodName = invocation.Method.Name;
@@ -97,11 +100,12 @@ public IEnumerable<IComponentRegistration> RegistrationsFor(Service service, Fun
 
             invocation.ReturnValue = Adjust(results, invocation.Method.ReturnType);
         }
-{% endcodeblock %}
+```
 
 调用了eventBus的Notify方法
 ### DefaultOrchardEventBus类
-{% codeblock lang:c# %}
+
+```
   public IEnumerable Notify(string messageName, IDictionary<string, object> eventData) {
             // call ToArray to ensure evaluation has taken place
             return NotifyHandlers(messageName, eventData).ToArray();
@@ -128,6 +132,6 @@ public IEnumerable<IComponentRegistration> RegistrationsFor(Service service, Fun
                 }
             }
         }
-{% endcodeblock %}
+```
 
 其实就是调用了各个实现IEventHandler接口的类。

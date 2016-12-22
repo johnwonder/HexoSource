@@ -55,4 +55,4 @@ at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 
 或者我们也可以用```scala -i testImportObj.java```命令引入scala REPL
 
-然后我们在scala命令行输入``` testImportObj.main(new Array[String](3))```也会输出ss字符串
+然后我们在scala命令行输入```testImportObj.main(new Array[String](3))```也会输出ss字符串

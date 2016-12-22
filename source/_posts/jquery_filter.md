@@ -8,7 +8,7 @@ tags: jquery filter
 ### filter函数
 
 1.0源码:
-{% codeblock lang:javascript %}
+```js
 	filter: function(t) {
 
 		//返回pushStack的结果
@@ -32,40 +32,40 @@ tags: jquery filter
 			//如果参数是其他类型那么就调用静态的filter函数
 			jQuery.filter(t,this).r, arguments );
 	}
-{% endcodeblock %}
+```
 ## 根据函数类型判断再内部调用不同的函数：
 ### 1.grep函数内部就是遍历元素数组，调用参数函数t，如果满足t函数，那么就push到result数组。
-{% codeblock lang:javascript %}
+```
 	grep: function(elems, fn, inv) {
 		// If a string is passed in for the function, make a function
 		// for it (a handy shortcut)
 		if ( fn.constructor == String )
 			fn = new Function("a","i","return " + fn);
-		//定义局部数组	
+		//定义局部数组
 		var result = [];
-		
+
 		// Go through the array, only saving the items
 		// that pass the validator function
 		for ( var i = 0; i < elems.length; i++ )
 			if ( !inv && fn(elems[i],i) || inv && !fn(elems[i],i) )
 				result.push( elems[i] );
-		
+
 		return result;
 	}
-{% endcodeblock %}
+```
 
-比如 
-{% codeblock lang:javascript %}
+比如
+```
 	var elems = $('li');
 
 	elems.filter(function(index) {
 		//index就是elems的一个元素
   		return $("strong",index).length == 1;//
 	}).css('background-color', 'red');
-{% endcodeblock %}
+```
 
 jQuery的静态方法是通过extent扩展方法生成的：
-{% codeblock lang:javascript %}
+```
 	function jQuery(){
 
 	}
@@ -83,4 +83,4 @@ jQuery的静态方法是通过extent扩展方法生成的：
 	jQuery.extend({
 
 	})
-{% endcodeblock %}
+```

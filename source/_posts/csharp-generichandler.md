@@ -7,8 +7,7 @@ tags:
 
 ###
 
-{% codeblock lang:csharp %}
-
+```csharp
 	//先声明泛型委托
 	public delegate T  GetHandler<T>(string propertyName,T t);
 
@@ -17,4 +16,4 @@ tags:
 
 	//再调用
 	string str = strHandler("Id", "ss");
-{% endcodeblock %}
+```
