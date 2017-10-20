@@ -1,6 +1,6 @@
 title: jquery_clean源码分析
 date: 2016-09-05 22:16:24
-tags: jquery clean
+tags: jquery
 ---
 
 ##   jquery1.0源码解读
@@ -20,6 +20,7 @@ tags: jquery clean
 ```javascript
     //比如$('<div>123</div>,<a><223/a>')
     //用调用jQuery.clean方法返回
+		//a 需是一个数组
 	clean: function(a) {
 		var r = [];
 		for ( var i = 0; i < a.length; i++ ) {
@@ -37,16 +38,19 @@ tags: jquery clean
 					table = "td";
 					a[i] = "<table><tbody><tr>" + a[i] + "</tr></tbody></table>";
 				}
-	
+
 				var div = document.createElement("div");
 				div.innerHTML = a[i];//构造div 把table放在div中。
-	
+
 				if ( table ) {
-					div = div.firstChild;
-					if ( table != "thead" ) div = div.firstChild;
+					div = div.firstChild;// table元素
+
+					//如果table是 tr 那么 div就变成tr元素
+					//如果table是 td 那么 div也变成tr元素 ，但是下面的div就变成tr了。
+					if ( table != "thead" ) div = div.firstChild;//t的时候
 					if ( table == "td" ) div = div.firstChild;
 				}
-	
+
 				for ( var j = 0; j < div.childNodes.length; j++ )
 					r.push( div.childNodes[j] );
 				} else if ( a[i].jquery || a[i].length && !a[i].nodeType )

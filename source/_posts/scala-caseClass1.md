@@ -68,7 +68,7 @@ sbt中的Attributed就是个case class
 
 关于Attributed类参数有两个括号的问题参考：
 
-[scala函数编程的柯力化](http://www.tuicool.com/articles/6zymymu)
+[scala函数编程的柯里化](http://www.tuicool.com/articles/6zymymu)
 [Scala 函数柯里化(Currying)](https://wizardforcel.gitbooks.io/w3school-scala/content/10-9.html)
 
 [Scala class和case class的区别](https://www.iteblog.com/archives/1508)

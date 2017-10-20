@@ -1,6 +1,6 @@
 title: hexo 命令call是如何调用的
 date: 2016-09-11 20:03:17
-tags: hexo call
+tags: hexo
 ---
 
 ## hexo.call

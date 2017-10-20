@@ -1,6 +1,6 @@
 title: jquery_filter函数深入分析
 date: 2016-09-02 22:20:19
-tags: jquery filter grep
+tags: jquery
 ---
 
 ##   jquery1.0源码解读
@@ -15,7 +15,7 @@ not参数为空，所以g为jQuery.grep。
 
 t为.example，所以满足以下正则:
 ```javascript
-	t && /^[a-z[({<*:.#]/i.test(t) 
+	t && /^[a-z[({<*:.#]/i.test(t)
 ```
 进入while循环,调用`jQuery.parse`解析数组,满足第四个正则元素`([:.#]*)S`,最后m为
 0: ".example"

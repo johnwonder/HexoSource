@@ -1,6 +1,6 @@
 title: jquery-each
 date: 2015-09-24 14:22:05
-tags:
+tags: jquery
 ---
 
 ##   jquery1.0源码解读

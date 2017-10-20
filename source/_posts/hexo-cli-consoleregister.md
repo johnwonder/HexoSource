@@ -1,9 +1,9 @@
-title: hexo-cli_consoleregister
+title: hexo-cli源码分析之控制台注册
 date: 2016-08-29 23:33:11
-tags: hexo console
+tags: hexo
 ---
 
-##   hexo-cli 1.0.2源码解读
+##   hexo-cli 1.0.2版本
 
 ### loadModule
 

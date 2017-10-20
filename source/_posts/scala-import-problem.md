@@ -18,11 +18,11 @@ public class stringTest {
 }
 ```
 
-用```javac```命令编译此文件，在目录下会生成stringTest.class
+用javac命令编译此文件，在目录下会生成stringTest.class
 此时我们并没有定义它的package,如果在同级目录下新建javaStringTest.scala文件如下：
 
-```java
-object testImport{
+```
+object testImport {
 
    def main(args: Array[String]){
 

@@ -1,6 +1,6 @@
 title: hexo scaffold的创建过程
 date: 2016-09-29 22:08:49
-tags: hexo scaffold
+tags: hexo
 ---
 
 ## layout从哪边来
@@ -65,7 +65,7 @@ tags: hexo scaffold
 	  if (rPrefixSep.test(str)) return {content: str};
 
 	  var match = str.match(rFrontMatterNew);
-	 
+
 	  return {
 	    data: match[1],
 	    content: match[3] || '',

@@ -1,6 +1,6 @@
-title: hexo_loadConfig
+title: hexo源码分析之加载配置文件
 date: 2016-09-25 10:01:17
-tags: hexo config
+tags: hexo
 ---
 
 ## hexo是如何加载配置文件的

@@ -1,6 +1,6 @@
 title: hexo_util工具包分析1
 date: 2016-09-15 22:57:09
-tags: hexo hexo-util
+tags: hexo
 ---
 
 ## hexo util包分析

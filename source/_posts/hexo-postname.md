@@ -1,6 +1,6 @@
 title: hexo_postname
 date: 2016-09-18 22:34:11
-tags: hexo post hexo-util
+tags: hexo
 ---
 
 ## new_post_path.js
@@ -17,7 +17,7 @@ hexo的文章生成名称经过newPostFilter这个过滤器来生成的：
 	  /* jshint validthis: true */
 	  data = data || {};//data里带有文章标题
 
-	  var sourceDir = this.source_dir;//this指向hexo实例 
+	  var sourceDir = this.source_dir;//this指向hexo实例
 	  //this.source_dir = pathFn.join(base, 'source') + sep; hexo/index.js
 	  var draftDir = pathFn.join(sourceDir, '_drafts');
 	  var postDir = pathFn.join(sourceDir, '_posts');
@@ -79,7 +79,7 @@ hexo的文章生成名称经过newPostFilter这个过滤器来生成的：
 
 	        //permalink.stringify 正则替换把permalink中的title替换为filenamedata中的titile，就是文章标题
 	        //_.defaults lodash库
-	        //Assigns own enumerable properties of source object(s) to the destination object for all destination properties that resolve to undefined. Once a property is set, additional values of the same property are ignored. 
+	        //Assigns own enumerable properties of source object(s) to the destination object for all destination properties that resolve to undefined. Once a property is set, additional values of the same property are ignored.
 
 	        target = pathFn.join(postDir, permalink.stringify(
 	          _.defaults(filenameData, permalinkDefaults)));

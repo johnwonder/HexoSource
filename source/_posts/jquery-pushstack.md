@@ -1,6 +1,6 @@
 title: jquery_pushstack函数分析
 date: 2016-09-04 22:10:07
-tags: jquery pushStack
+tags: jquery
 ---
 
 ##   jquery1.0源码解读
@@ -38,4 +38,3 @@ pushStack是个对象函数，不是静态方法，用jQuery.pushStack调用会�
 		return this.get( this.stack.pop() );//stack 保存了元素数组,get把当前元素数组 push 到新数组，1.0还没有prevObject
 	}
 ```
-

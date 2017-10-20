@@ -1,6 +1,6 @@
 title: hexo中的Promise应用
 date: 2016-09-11 10:46:55
-tags: hexo Promise
+tags: hexo
 ---
 
 ## hexo Promise的使用

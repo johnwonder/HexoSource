@@ -1,6 +1,6 @@
 title: hexo-cli源码分析之入口文件hexo.js
 date: 2016-08-28 10:40:21
-tags: hexo hexo-cli
+tags: hexo
 ---
 
 ##   hexo-cli 1.0.2源码解读

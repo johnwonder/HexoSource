@@ -51,6 +51,8 @@ tags:
                 if (dic1.TryRemove(DateTime.Now.Date, out countList) && countList.Count >= 2)
                 {
                 	//这边会报集合已修改，无法进行遍历，看来countList线程共享？
+
+                  //因为上面有可能会有其他线程的update操作
                    foreach (var item in countList)
                     {
                         Console.WriteLine("removed :" + " " + DateTime.Now.ToString("HH:mm:ss fff"));

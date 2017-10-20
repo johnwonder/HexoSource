@@ -1,6 +1,6 @@
 title: jquery中$(this)的流程
 date: 2016-08-31 21:52:56
-tags: jquery $(this)
+tags: jquery
 ---
 
 ##   jquery1.0源码解读
@@ -38,7 +38,7 @@ tags: jquery $(this)
 	    //如果c是jQuery对象，调用find函数，去查找
 		if ( c && c.jquery )
 			return $( c ).find(a);
-		
+
 		// If the context is global, return a new object
 		//jquery("#example") 第一次 进入  返回 new Jquery(),
 		//进入jQuery.find
@@ -72,7 +72,7 @@ tags: jquery $(this)
 	  // See if an extra function was provided
 	  //参数里是否有扩展方法提供
 		var fn = arguments[ arguments.length - 1 ];
-		
+
 		// If so, execute it in context
 		if ( fn && fn.constructor == Function )
 			this.each(fn);//通过jQuery.prototype  原型链
@@ -84,7 +84,9 @@ tags: jquery $(this)
 	if ( window == this )
 		return new jQuery(a,c);
 ```
-那么就又会进入jQuery函数，这次就会进入
+
+因为直接调用jQuery方法this为window,那么就又会进入jQuery函数，这次就会进入
+
 ### this.get函数
 ```javascript
 		this.get( a.constructor == Array || a.length && !a.nodeType && a[0] != undefined && a[0].nodeType ?
@@ -108,7 +110,7 @@ get函数中因为a此时为页面元素，所以根据条件会进入
 		// Set the correct context (if none is provided)
         //设置当前上下文为Document
 		context = context || jQuery.context || document;
-	
+
 		if ( t.constructor != String ) return [t];
 		//....下面代码省略
 ```
@@ -130,7 +132,7 @@ get函数中因为a此时为页面元素，所以根据条件会进入
             //$(this) 又返回一个jQuery对象，又可以调用jQuery的各种方法
 			this.length = 0;
 			[].push.apply( this, num );
-			
+
 			return this;
 		} else
 			return num == undefined ?

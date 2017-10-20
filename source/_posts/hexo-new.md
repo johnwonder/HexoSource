@@ -1,6 +1,6 @@
 title: hexo new命令解析
 date: 2016-09-09 22:28:15
-tags: hexo new
+tags: hexo
 ---
 
 ## hexo new命令

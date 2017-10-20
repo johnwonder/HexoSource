@@ -1,6 +1,6 @@
 title: hexo post.create的过程分析
 date: 2016-09-11 20:21:31
-tags: hexo post 
+tags: hexo 
 ---
 
 ## hexo的post创建过程
@@ -32,7 +32,7 @@ hexo/post.js：
 
 	  var ctx = this.context;//为hexo对象
 	  var config = ctx.config; //_.clone(defaultConfig) _:lodash库 浅拷贝
-	  //https://github.com/lodash 
+	  //https://github.com/lodash
 
 	  //slugize为hexo_util库中的函数
 	  data.slug = slugize((data.slug || data.title).toString(), {transform: config.filename_case});
@@ -105,7 +105,7 @@ hexo/post.js：
 	      // Create asset folder
 	      createAssetFolder(path, config.post_asset_folder)
 	    ]).then(function(){
-	    	
+
 	      //http://biyeah.iteye.com/blog/1308954
 	      ctx.emit('new', result);
 	    }).thenReturn(result);

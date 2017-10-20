@@ -1,6 +1,6 @@
 title: hexo流程梳理之database
 date: 2016-10-17 22:50:07
-tags: warehouse
+tags: hexo
 ---
 
 ## Hexo List命令
