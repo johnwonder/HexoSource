@@ -90,14 +90,33 @@ $cacheFactory出现了，它是通过javascript的键值对象作为键传给pro
            var size = 0,
            //把options 和{id:cacheId} 放入{} 中 不是深拷贝
            stats = extend({}, options, {id: cacheId}),
-           data = createMap(),
+           data = createMap(),//通过Object.create(null) 创建个空对象
            capacity = (options && options.capacity) || Number.MAX_VALUE,
            lruHash = createMap(),
            freshEnd = null,
            staleEnd = null;
            //返回caches中的一个对象
            return caches[cacheId] = {
+                //省略部分代码
+                //存储里讲解
+                put:function(key,value){
 
+                },
+                get: function(key) {
+
+                },
+                remove: function(key) {
+
+                },
+                removeAll: function() {
+
+                },
+                destroy: function() {
+
+                },
+                info: function() {
+
+                }
            }
            //
            function refresh(entry) {
@@ -128,3 +147,33 @@ $cacheFactory出现了，它是通过javascript的键值对象作为键传给pro
   }
 ```
 ## CacheFactoryProvider的存储
+
+存储分为这几个部分`put`,`refresh`,`remove`,`link`
+
+### put函数
+
+value会放入data对象中，key会放入lruHash链表
+```
+put: function(key, value) {
+       if (isUndefined(value)) return;
+         //如果设定的capcity小于maxvalue
+       if (capacity < Number.MAX_VALUE) {
+         //lruHash 存了当前的key 还有可能是 p 和n  (previous和next)
+         var lruEntry = lruHash[key] || (lruHash[key] = {key: key});
+
+         //刷新各节点的次序
+         refresh(lruEntry);//把当前entry放入链表末尾
+
+       }
+       //如果key 在data里不存在 那么增加size
+       if (!(key in data)) size++;
+       data[key] = value;
+
+       //当大于capacity时 会清除最早加入的那个
+       if (size > capacity) {
+         this.remove(staleEnd.key);//移除淘汰节点stableEnd
+       }
+
+       return value;
+     }
+```
