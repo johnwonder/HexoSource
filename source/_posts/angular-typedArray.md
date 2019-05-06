@@ -1,4 +1,4 @@
-title: angular-typedArray
+title: angular源码分析之typedArray
 date: 2017-01-08 13:46:09
 tags: angular
 ---

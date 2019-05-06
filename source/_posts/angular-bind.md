@@ -1,4 +1,4 @@
-title: angular绑定函数
+title: angular源码分析之bind函数
 date: 2017-01-14 15:10:23
 tags: angular
 ---
