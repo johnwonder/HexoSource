@@ -65,14 +65,27 @@ https://blog.csdn.net/qq_29411737/article/details/80835658
 27.spring事务 参数
 28.redis锁
 29.jvm调优 为什么设置256m就够了
+//https://blog.csdn.net/tpasta/article/details/82120974
+JVM参数中添加GC日志，GC日志中会记录每次FullGC之后各代的内存大小，观察老年代GC之后的空间大小。可观察一段时间内（比如2天）的FullGC之后的内存情况，根据多次的FullGC之后的老年代的空间大小数据来预估FullGC之后老年代的存活对象大小（可根据多次FullGC之后的内存大小取平均值）
+
 30.策略模式是怎样的
+//http://baijiahao.baidu.com/s?id=1601547440739500969&wfr=spider&for=pc
+封装变化的概念。
+编程中使用接口，而不是使用的是具体的实现类(面向接口编程)。
+
 31.什么情况下会出现内存溢出
+//https://www.cnblogs.com/panxuejun/p/5883044.html
 32.乐观锁和悲观锁 //乐观锁与悲观锁不是指具体的什么类型的锁，而是指看待并发同步的角度。
 //https://www.cnblogs.com/lxmyhappy/p/7380073.html
 33.如何保证一致性
 //https://blog.csdn.net/hxpjava1/article/details/79409459
+//https://blog.csdn.net/qq_41568597/article/details/82501738
 34.java有哪些锁
 //https://www.cnblogs.com/lxmyhappy/p/7380073.html
 
-35.spring ioc 的生命周期
+35.spring ioc bean 的生命周期
+//https://www.cnblogs.com/goodcheap/p/6491490.html
 36.代码规范
+37.消耗cpu的操作
+//https://www.cnblogs.com/duanxz/p/4159963.html
+//https://www.cnblogs.com/paul8339/p/7464206.html
