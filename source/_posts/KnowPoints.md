@@ -58,3 +58,20 @@ https://blog.csdn.net/q_0718/article/details/80269864
 
 25.jdk 1.8 的主要特性
 https://blog.csdn.net/qq_29411737/article/details/80835658
+
+
+26.幂等性
+//https://www.cnblogs.com/javalyy/p/8882144.html
+27.spring事务 参数
+28.redis锁
+29.jvm调优 为什么设置256m就够了
+30.策略模式是怎样的
+31.什么情况下会出现内存溢出
+32.乐观锁和悲观锁 //乐观锁与悲观锁不是指具体的什么类型的锁，而是指看待并发同步的角度。
+//https://www.cnblogs.com/lxmyhappy/p/7380073.html
+33.如何保证一致性
+//https://blog.csdn.net/hxpjava1/article/details/79409459
+34.java有哪些锁
+//https://www.cnblogs.com/lxmyhappy/p/7380073.html
+
+35.spring ioc 的生命周期
