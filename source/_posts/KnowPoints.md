@@ -1,6 +1,6 @@
 title: 知识点整理
 date: 2019-05-05 10:09:15
-tags: KnowPoints
+tags: java
 ---
 
 1.常用设计模式
@@ -27,3 +27,34 @@ tags: KnowPoints
 15.spring mvc 路由机制
 
 16.Aop
+https://blog.csdn.net/dadiyang/article/details/82920139
+
+17.Spring Security
+https://blog.csdn.net/liushangzaibeijing/article/details/81220610#%C2%A0%202%E3%80%81WebSecurityConfiguration%E7%B1%BB
+
+https://www.liangzl.com/get-article-detail-7915.html
+https://www.jianshu.com/nb/29347401
+
+
+18.MQ
+
+19.除了ip白名单，还有其他拦截机制吗
+20.分布式任务调度
+21.缓存穿透和缓存雪崩
+https://www.cnblogs.com/jasontec/p/9699242.html
+
+
+22.dubbo 没有注册中心 也可以访问吗
+https://blog.csdn.net/weixin_43170586/article/details/83244562
+https://blog.csdn.net/xy3233/article/details/85759649
+https://blog.csdn.net/sosozha/article/details/86712478
+
+23、Dubbo与注册中心Zookeeper的交互过程
+https://blog.csdn.net/qq_27529917/article/details/80632078
+
+24.Spring cloud Feign
+https://www.cnblogs.com/liferecord/p/6893786.html
+https://blog.csdn.net/q_0718/article/details/80269864
+
+25.jdk 1.8 的主要特性
+https://blog.csdn.net/qq_29411737/article/details/80835658
