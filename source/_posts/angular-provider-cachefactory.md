@@ -81,11 +81,12 @@ $cacheFactory出现了，它是通过javascript的键值对象作为键传给pro
 
        function cacheFactory(cacheId, options) {
          //部分代码省略
-           if (cacheId in caches) {//如果caches中已经存在cacheId
+         if (cacheId in caches) {//如果caches中已经存在cacheId
              //实例代码里抛出的错误就在此处、
              //统一调用minErr函数
-             throw minErr('$cacheFactory')('iid', "CacheId '{0}' is already taken!", cacheId);
-           }
+            throw minErr('$cacheFactory')('iid', "CacheId '{0}' is already taken!"
+                                          , cacheId);
+          }
 
            var size = 0,
            //把options 和{id:cacheId} 放入{} 中 不是深拷贝
@@ -100,27 +101,20 @@ $cacheFactory出现了，它是通过javascript的键值对象作为键传给pro
                 //省略部分代码
                 //存储里讲解
                 put:function(key,value){
-
                 },
                 get: function(key) {
-
                 },
                 remove: function(key) {
-
                 },
                 removeAll: function() {
-
                 },
                 destroy: function() {
-
                 },
                 info: function() {
-
                 }
            }
-           //
+           //刷新节点次序
            function refresh(entry) {
-
            }
            //
            function link(nextEntry, prevEntry) {
@@ -140,7 +134,6 @@ $cacheFactory出现了，它是通过javascript的键值对象作为键传给pro
         cacheFactory.get = function(cacheId) {
             return caches[cacheId];
         };
-
 
         return cacheFactory;
      }

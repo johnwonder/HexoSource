@@ -1,6 +1,6 @@
 title: csharp-stringintern1
 date: 2015-11-06 10:24:50
-tags:
+tags: c#
 ---
 
 读了[深入解析String#intern](http://http://tech.meituan.com/in_depth_understanding_string_intern.html)这篇文章，带着对C#字符串驻留的疑问，在C#里做了如下测试：

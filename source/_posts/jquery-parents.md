@@ -1,6 +1,6 @@
 title: jquery_parents
 date: 2016-09-07 22:02:04
-tags: jquery parents
+tags: jquery
 ---
 
 ##   jquery1.0源码解读

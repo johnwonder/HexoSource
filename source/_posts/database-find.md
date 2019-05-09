@@ -1,6 +1,6 @@
 title: database_find
 date: 2016-10-03 23:44:30
-tags: database 
+tags: hexo 
 ---
 
 ## hexo 的json database之find
@@ -87,7 +87,7 @@ tags: database
 ```
 
 声明了一个Schema,Scheme构造函数中会把当前schema参数加入path中，以便于查询
-```js	
+```js
 	if (schema){
     	this.add(schema);
   	}
@@ -206,4 +206,3 @@ tags: database
 	};
 ```
 这边的match方法就是在schema类的_parseQuery中有可能用到的，下回再讲。
-

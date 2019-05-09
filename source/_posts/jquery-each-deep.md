@@ -1,6 +1,6 @@
 title: jquery_each函数深入分析
 date: 2016-09-01 21:58:35
-tags: jquery each
+tags: jquery
 ---
 
 ##   jquery1.0源码解读
@@ -48,9 +48,9 @@ $(".li")首先调用jQuery.find( a, c )静态函数,c为空
 		// Set the correct context (if none is provided)
         //设置当前上下文为Document
 		context = context || jQuery.context || document;
-	
+
 		if ( t.constructor != String ) return [t];
-	
+
 		if ( !t.indexOf("//") ) {
 			context = context.documentElement;
 			t = t.substr(2,t.length);
@@ -61,31 +61,31 @@ $(".li")首先调用jQuery.find( a, c )静态函数,c为空
 			if ( t.indexOf("/") >= 1 )
 				t = t.substr(t.indexOf("/"),t.length);
 		}
-	
+
 		var ret = [context];
 		var done = [];
 		var last = null;
-	
+
 		while ( t.length > 0 && last != t ) {
 			var r = [];
 			last = t;
-			
+
 			//去除空格并把//替换为空
 			t = jQuery.trim(t).replace( /^\/\//i, "" );
-			
+
 			var foundToken = false;
 			//这里调用token 正则匹配 然后在map里传入function的字符串。。
 			for ( var i = 0; i < jQuery.token.length; i += 2 ) {
 				var re = new RegExp("^(" + jQuery.token[i] + ")");
 				var m = re.exec(t);
-				
+
 				if ( m ) {
 					r = ret = jQuery.map( ret, jQuery.token[i+1] );
 					t = jQuery.trim( t.replace( re, "" ) );
 					foundToken = true;
 				}
 			}
-			
+
 			if ( !foundToken ) {
 				if ( !t.indexOf(",") || !t.indexOf("|") ) {
 					if ( ret[0] == context ) ret.shift();
@@ -93,9 +93,9 @@ $(".li")首先调用jQuery.find( a, c )静态函数,c为空
 					r = ret = [context];
 					t = " " + t.substr(1,t.length);
 				} else {
-					var re2 = /^([#.]?)([a-z0-9\\*_-]*)/i;//# 或 .开头 
+					var re2 = /^([#.]?)([a-z0-9\\*_-]*)/i;//# 或 .开头
 					var m = re2.exec(t);
-		
+
 					if ( m[1] == "#" ) {
 						// Ummm, should make this work in all XML docs
 						var oid = document.getElementById(m[2]);
@@ -103,7 +103,7 @@ $(".li")首先调用jQuery.find( a, c )静态函数,c为空
 						t = t.replace( re2, "" );
 					} else {
 						if ( !m[2] || m[1] == "." ) m[2] = "*";
-		
+
 						for ( var i = 0; i < ret.length; i++ )
 							r = jQuery.merge( r,
 								m[2] == "*" ?
@@ -113,7 +113,7 @@ $(".li")首先调用jQuery.find( a, c )静态函数,c为空
 					}
 				}
 			}
-	
+
 			if ( t ) {
 				var val = jQuery.filter(t,r);
 				//fileter用来过滤 如 div#example
@@ -129,10 +129,10 @@ $(".li")首先调用jQuery.find( a, c )静态函数,c为空
 				t = jQuery.trim(val.t);//用于遍历".example.e"这种情况
 			}
 		}
-	
+
 		if ( ret && ret[0] == context ) ret.shift();//弹出context返回数组原来的第一个元素的值 //该方法会改变数组的长度
 		done = jQuery.merge( done, ret );//合并元素数组
-	
+
 		return done;
 	}
 ```
@@ -204,7 +204,7 @@ getAll递归返回所有o的子节点
 ```javascript
 	if ( ret && ret[0] == context ) ret.shift();//弹出context返回数组原来的第一个元素的值 //该方法会改变数组的长度
 		done = jQuery.merge( done, ret );//合并元素数组
-	
+
 		return done;
 ```
 返回的done就包含合并后的所有元素数组

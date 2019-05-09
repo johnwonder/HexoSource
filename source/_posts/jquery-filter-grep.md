@@ -1,6 +1,6 @@
 title: jquery的filter和grep函数思考
 date: 2016-09-03 22:11:04
-tags: jquery filter grep
+tags: jquery
 ---
 
 ##   jquery1.0源码解读
@@ -16,7 +16,7 @@ filter函数首先根据参数not确定是不是筛选出不满足参数t的：
 1.必须满足`/^[a-z[({<*:.#]/i`正则才会进入`while`循环，否则直接返回`return { r: r, t: t };`
 
 2.进入循环后就开始应用`jQuery.parse`数组循环筛选：
-  
+
   因为jQuery.parse数组中包含S，Q两个正则常量:
   1.//Look for a string-like sequence
     replace( 'S', "([a-z*_-][a-z0-9_-]*)" )
@@ -29,10 +29,8 @@ filter函数首先根据参数not确定是不是筛选出不满足参数t的：
   4.如果没有not，那么就根据`jQuery.expr`找出符合筛选规则的函数进行eval
     因为要传入字符串，所以用eval
   ```javascript
-  	 eval("f = function(a,i){" + 
-					( m[1] == "@" ? "z=jQuery.attr(a,m[3]);" : "" ) + 
+  	 eval("f = function(a,i){" +
+					( m[1] == "@" ? "z=jQuery.attr(a,m[3]);" : "" ) +
 					"return " + f + "}");
   ```
   最后通过grep函数传入f规则函数 再筛选出剩余的元素。
-
-

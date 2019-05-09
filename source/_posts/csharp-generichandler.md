@@ -1,6 +1,6 @@
 title: csharp-generichandler
 date: 2015-10-20 14:32:59
-tags:
+tags: c#
 ---
 
 ##   C# 泛型委托书写

@@ -1,6 +1,6 @@
 title: csharp_delegate_event
 date: 2017-09-08 11:23:24
-tags: C#
+tags: c#
 ---
 
 ## c#委托和事件的区别

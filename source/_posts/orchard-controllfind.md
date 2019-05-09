@@ -1,6 +1,6 @@
 title: orchard中Controller是如何找到的
 date: 2015-09-30 16:05
-tags:
+tags: orchard
 ---
 
 ##   Orchard 控制器解析1

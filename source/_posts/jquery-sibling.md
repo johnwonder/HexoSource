@@ -1,6 +1,6 @@
 title: jquery_sibling
 date: 2016-09-06 21:37:19
-tags: jquery sibling
+tags: jquery
 ---
 
 ##   jquery1.0源码解读

@@ -1,6 +1,6 @@
 title: jquery之map函数解析
 date: 2016-08-27 21:10:02
-tags: jquery map
+tags: jquery
 ---
 
 ##   jquery1.0源码解读

@@ -1,6 +1,6 @@
 title: jquery-filter-version
 date: 2015-11-04 16:57:20
-tags: jquery filter
+tags: jquery
 ---
 
 ## jquery1.0 版本的 filter函数

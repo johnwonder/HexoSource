@@ -1,6 +1,6 @@
 title: 'jquery_event[1]'
 date: 2016-08-29 21:44:44
-tags: jquery event
+tags: jquery
 ---
 
 ##   jquery1.0源码解读

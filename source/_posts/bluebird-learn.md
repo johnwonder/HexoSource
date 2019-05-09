@@ -1,6 +1,6 @@
 title: bluebird Promise框架学习一
 date: 2016-09-13 22:17:53
-tags: blue bird
+tags: [bluebird,hexo]
 ---
 
 hexo中的Promise用了bluebird提供的，比如Promise.each,Promise.all,new Promise,Promise.map 等等。

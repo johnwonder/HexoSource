@@ -1,6 +1,6 @@
 title: log4j_cannot_log_in_tomcat
 date: 2016-12-29 14:05:34
-tags: slf4j
+tags: [slf4j,java]
 ---
 
 ## slf4j 日志配置

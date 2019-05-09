@@ -1,6 +1,6 @@
 title: csharp-reflectproperty
 date: 2015-10-20 09:16:19
-tags:
+tags: c#
 ---
 
 ##   C#反射Encoding.UTF8属性

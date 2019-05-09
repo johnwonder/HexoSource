@@ -1,6 +1,6 @@
 title: jquery之filter函数解析
 date: 2016-08-27 08:46:49
-tags: jquery filter
+tags: jquery
 ---
 
 ##   jquery1.0源码解读

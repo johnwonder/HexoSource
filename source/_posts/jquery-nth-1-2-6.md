@@ -1,6 +1,6 @@
 title: jquery_1.2.6版本中的nth函数
 date: 2016-09-08 22:52:37
-tags: jquery nth
+tags: jquery
 ---
 
 ## jquery1.2.6 版本的 nth函数

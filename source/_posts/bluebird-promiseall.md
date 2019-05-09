@@ -1,6 +1,6 @@
 title: bluebird的promiseall浅析
 date: 2016-09-14 23:14:18
-tags: bluebird promiseall
+tags: [bluebird,hexo]
 ---
 
 ## Promise.all
@@ -31,7 +31,7 @@ hexo中load方法使用了Promise.all,来看代码：
 	    callback = args;
 	    args = {};
 	  }
-	 
+
 	  return Promise.all([
 	      (function(){
 	         console.log('1');//这里会打印

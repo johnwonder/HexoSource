@@ -1,6 +1,6 @@
 title: slf4j_MDC
 date: 2016-12-29 16:50:56
-tags: slf4j
+tags: [slf4j,java]
 ---
 
 # slf4j MDC

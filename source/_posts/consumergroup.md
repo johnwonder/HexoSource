@@ -1,6 +1,6 @@
 title: kafka-consumergroup
 date: 2016-10-11 20:45:59
-tags: kafka consumergroup
+tags: kafka
 ---
 
 ## kafka 查看当前有多少group
