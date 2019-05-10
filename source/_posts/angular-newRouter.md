@@ -1,4 +1,4 @@
-title: angular_newRouter
+title: Angular路由组件newRouter
 date: 2017-06-19 21:57:20
 tags: angular
 ---
