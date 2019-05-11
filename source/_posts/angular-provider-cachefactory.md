@@ -85,8 +85,10 @@ $cacheFactory出现了，它是通过javascript的键值对象作为键传给pro
 ```js
   function $CacheFactoryProvider() {
     //定义$get方法供依赖调用
+    //controller中获取cacheFactory时会调用此方法
+    //这个$get方法也是获取provider的关键方法
      this.$get = function() {
-       var caches = {};
+       var caches = {};//闭包的一个运用
 
        function cacheFactory(cacheId, options) {
          //部分代码省略
@@ -151,7 +153,7 @@ $cacheFactory出现了，它是通过javascript的键值对象作为键传给pro
 ```
 ## CacheFactoryProvider的存储
 
-存储分为这几个部分`put`,`refresh`,`remove`,`link`
+存储分为这几个核心方法:`put`,`refresh`,`remove`,`link`
 
 ### put函数
 
@@ -274,3 +276,7 @@ function link(nextEntry, prevEntry) {
       }
     }
 ```
+
+###### 参考资料：
+1. [【算法】—— LRU算法](https://www.cnblogs.com/bopo/p/9255654.html)
+2. [缓存淘汰算法--LRU算法](https://flychao88.iteye.com/blog/1977653)
