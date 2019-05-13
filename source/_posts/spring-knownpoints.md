@@ -7,3 +7,4 @@ tags: Spring
 2. [idea中Spring项目创建以及实现一个小的IoC案例](https://blog.csdn.net/lu677521/article/details/79017626)
 3. [Transactional Distributed Database Layer](https://github.com/palantir/atlasdb)
 4. [IDEA阅读spring源码并调试](https://blog.csdn.net/u013310075/article/details/80707098)
+5. [Win10环境编译spring-framework4.1.9版本，报错"Failed to capture snapshot of input files for task 'distZip'"](https://blog.csdn.net/boling_cavalry/article/details/80796059)
