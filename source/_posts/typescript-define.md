@@ -1,4 +1,4 @@
-title: typescript_define
+title: typescript定义文件疑惑
 date: 2017-08-07 11:24:26
 tags: typescript
 ---
