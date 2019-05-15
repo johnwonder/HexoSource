@@ -14,6 +14,7 @@ tags: react
 8. [React.js 小书 Lesson12 - state vs props](https://segmentfault.com/a/1190000011946730)
 9. [react性能优化](https://segmentfault.com/a/1190000016259872)
 10. [Your guide to the (sometimes overwhelming!) React ecosystem](https://github.com/petehunt/react-howto)
+11. [【React深入】从Mixin到HOC再到Hook](https://juejin.im/post/5cad39b3f265da03502b1c0a)
 
 ### react路由
 
@@ -32,3 +33,4 @@ tags: react
 ### redux源码
 
 1. [redux源码图解：createStore 和 applyMiddleware](https://www.cnblogs.com/Ruth92/p/7421697.html#top)
+2. [理解状态机](https://glumes.com/post/android/understand-state-machine/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)

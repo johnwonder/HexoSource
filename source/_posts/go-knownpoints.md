@@ -11,3 +11,5 @@ tags: go
 
 4. [Gin is a HTTP web framework written in Go](https://github.com/gin-gonic/gin)
 5. [Iris is the fastest community-driven web framework](https://github.com/kataras/iris)
+
+6. [浅谈 Golang 中数据的并发同步问题](https://jingwei.link/2019/05/11/golang-concurrency-01.html?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
