@@ -7,3 +7,5 @@ tags: kafka
 2. [kafka partition（分区）与 group](https://www.cnblogs.com/liuwei6/p/6900686.html)
 3. [Kafka 学习笔记（一） ：为什么需要 Kafka？](https://scala.cool/2018/03/learning-kafka-1/)
 4. [kafka中partition和消费者对应关系](https://www.cnblogs.com/sa-dan/p/8080197.html)
+5. [kafka与zookeeper间的关联](https://blog.csdn.net/nankiao/article/details/78553635)
+6. [被视为代替Kafka的消息队列：Apache Pulsar设计简介](https://mp.weixin.qq.com/s/6mZRCyVlxRxyEIrhfB9gjg)
