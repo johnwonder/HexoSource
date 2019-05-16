@@ -9,3 +9,4 @@ tags: vue
 4. [阿里前端开发 macOS个人开发](https://www.xcodebuild.com/)
 5. [前端知识月刊 ](https://github.com/jsfront/month)
 6. [剖析 Vue.js 内部运行机制](https://juejin.im/book/5a36661851882538e2259c0f)
+7. [vue数据传递--我有特殊的实现技巧](https://www.cnblogs.com/MrZouJian/p/8645625.html#top)

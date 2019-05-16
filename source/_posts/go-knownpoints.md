@@ -15,3 +15,4 @@ tags: go
 6. [浅谈 Golang 中数据的并发同步问题](https://jingwei.link/2019/05/11/golang-concurrency-01.html?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
 7. [Pion TURN server, a simple extendable Golang TURN server](https://github.com/pion/turn)
+8. [今日头条Go建千亿级微服务的实践](https://studygolang.com/articles/10117)

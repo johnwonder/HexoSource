@@ -1,4 +1,4 @@
-title: angularjs源码分析之minErr函数
+title: angularjs源码剖析之minErr函数
 date: 2016-12-29 16:09:25
 tags: angular
 ---
@@ -142,6 +142,8 @@ angular.js内部代码有如下用法：
 ```
 
 从这个函数中我们可以学到以下几点
+
+> 函数内部返回函数
 
 > javascript slice的用法
 
