@@ -6,3 +6,6 @@ tags: vue
 1. [前端vue+后端koa，全栈式开发bilibili首页](https://github.com/lybenson/bilibili-vue)
 2. [Vue进阶（三十六）：vue.js中created方法的使用详解](https://blog.csdn.net/sunhuaqiang1/article/details/86702926)
 3. [《阿里云前端技术周刊》第四期](https://juejin.im/post/5cd783c4e51d453a4d530d8f)
+4. [阿里前端开发 macOS个人开发](https://www.xcodebuild.com/)
+5. [前端知识月刊 ](https://github.com/jsfront/month)
+6. [剖析 Vue.js 内部运行机制](https://juejin.im/book/5a36661851882538e2259c0f)

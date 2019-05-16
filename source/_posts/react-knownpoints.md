@@ -29,6 +29,7 @@ tags: react
 
 1. [webpack4 react sass 标准工程模板](https://github.com/zhoulujun/wepack4-react-project-template)
 2. [A highly scalable, offline-first foundation with the best developer experience and a focus on performance and best practices.](https://github.com/react-boilerplate/react-boilerplate)
+3. [A toolkit to quickly build apps with React, GraphQL & Meteor](https://github.com/VulcanJS/Vulcan)
 
 ### redux源码
 
