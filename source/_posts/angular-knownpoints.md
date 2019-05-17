@@ -7,6 +7,7 @@ tags: angular
 2. [build-your-own-angularjs](http://teropa.info/build-your-own-angular/)
 3. [理解Angular中的$apply()以及$digest()](https://blog.csdn.net/dm_vincent/article/details/38705099)
 4. [AngularJS Digest 过程解析](https://blog.csdn.net/jaytalent/article/details/51112377)
+5. [AngularJs自定义指令详解（7） - multiElement](https://www.cnblogs.com/sagacite/p/4622008.html)
 
 其中build your own angularjs(创造你自己的angularjs)中提到了一些比较有价值的话，我把它翻译
 过来给大家看看。

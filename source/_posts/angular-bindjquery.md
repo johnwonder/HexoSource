@@ -1,10 +1,11 @@
-title: angular-bindjquery
+title: angular源码剖析之绑定jQuery
 date: 2017-01-19 16:30:17
 tags: angular
 ---
 
 ## angular1.5.8 绑定jquery库
 
+### jq函数
 先看jq方法:  
 
 ```js
@@ -15,7 +16,9 @@ tags: angular
   for (i = 0; i < ii; ++i) {
     //line 1513 var ngAttrPrefixes = ['ng-', 'data-ng-', 'ng:', 'x-ng-'];
     prefix = ngAttrPrefixes[i];
+    //https://developer.mozilla.org/zh-CN/docs/Web/API/Document/querySelector
     if (el = window.document.querySelector('[' + prefix.replace(':', '\\:') + 'jq]')) {
+      //获取ng-jq属性
       name = el.getAttribute(prefix + 'jq');
       break;//只会获取一次
     }
@@ -25,6 +28,7 @@ tags: angular
   };
 ```
 
+### 绑定jquery库
 ```js
   var bindJQueryFired = false;
   function bindJQuery() {
@@ -74,7 +78,7 @@ tags: angular
       originalCleanData(elems);
     };
   } else {
-    jqLite = JQLite;//内置的JQLite 库
+    jqLite = JQLite;//使用内置的JQLite 库
   }
 
   angular.element = jqLite;
@@ -85,6 +89,7 @@ tags: angular
   }
 ```
 
+### 内置jQLite
 我们来看内置的JQLite库：  
 
 ```js

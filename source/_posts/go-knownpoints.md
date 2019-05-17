@@ -16,3 +16,9 @@ tags: go
 
 7. [Pion TURN server, a simple extendable Golang TURN server](https://github.com/pion/turn)
 8. [今日头条Go建千亿级微服务的实践](https://studygolang.com/articles/10117)
+
+9. [Any race is a bug](https://ms2008.github.io/2019/05/12/golang-data-race)
+
+10. [golang atomic包的使用](https://www.jianshu.com/p/228c119a7d0e)
+
+11. [我是这样看Go语言设计的优劣](https://zhuanlan.zhihu.com/p/64823525?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)

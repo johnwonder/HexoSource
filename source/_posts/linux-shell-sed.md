@@ -23,3 +23,4 @@ sed元字符\(..\) 匹配子串，保存匹配的字符，如s/\(love\)able/\1rs
 
 参考资料:
 [sed命令](http://man.linuxde.net/sed)
+[Linux sed命令详解](https://www.cnblogs.com/ftl1012/p/sed.html)
