@@ -19,3 +19,7 @@ tags: git
 #### mac常用工具整理
 
 1. [装了啥 2019 版](https://github.com/sorrycc/blog/issues/83)
+
+#### git 常用知识总结
+
+1.[git常用功能总结](https://monkeywie.github.io/2019/05/07/git-summary/)
