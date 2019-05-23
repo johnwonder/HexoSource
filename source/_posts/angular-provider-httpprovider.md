@@ -21,3 +21,4 @@ The $http service is a core AngularJS service that facilitates communication wit
 
  $http服务是AngularJs的核心服务，是通过浏览器的XMLHttpRequest对象或者JSONP来跟远程http服务
  进行通信的.也就是说$http内部必然是通过封装的ajax来完成他的设计的。
+ $http是基于$q服务暴露出来的deferred/promise api,所以要知道$http的高级使用得熟悉这些api.
