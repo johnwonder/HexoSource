@@ -1,4 +1,4 @@
-title: hexo流程梳理
+title: hexo流程梳理之别名注册
 date: 2016-10-15 21:58:37
 tags: hexo
 ---
