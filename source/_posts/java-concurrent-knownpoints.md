@@ -12,3 +12,5 @@ tags: java
 7. [Kubernetes 原生 CI/CD 系统 Prow 简介](https://mp.weixin.qq.com/s/qeYRAcDm2ZNmYgcPndAZjQ)
 8. [java 使用ConcurrentHashMap和计数器实现锁](https://www.jb51.net/article/114900.htm)
 9. [为什么ConcurrentHashMap的读操作不需要加锁？](https://mp.weixin.qq.com/s/5I6a2ab7dkO4XOnJ5Q3x4w)
+10. [通过ConcurrentHashMap的putIfAbsent方法实现对象锁](https://blog.csdn.net/zqz_zqz/article/details/80408035)
+11. [阿里面试题，Java中wait()方法为什么要放在同步块中](https://www.jianshu.com/p/b8073a6ce1c0?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation)
