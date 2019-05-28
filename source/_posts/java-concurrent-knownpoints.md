@@ -14,3 +14,7 @@ tags: java
 9. [为什么ConcurrentHashMap的读操作不需要加锁？](https://mp.weixin.qq.com/s/5I6a2ab7dkO4XOnJ5Q3x4w)
 10. [通过ConcurrentHashMap的putIfAbsent方法实现对象锁](https://blog.csdn.net/zqz_zqz/article/details/80408035)
 11. [阿里面试题，Java中wait()方法为什么要放在同步块中](https://www.jianshu.com/p/b8073a6ce1c0?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation)
+12. [阿里巴巴、美团等各大互联网公司的 Java 类校招对本科生的要求是什么](https://www.zhihu.com/question/26350691/answer/42692522?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+13. [优雅的SSM（Spring+SpringMVC+Mybatis）框架](https://github.com/wosyingjun)
+14. [《唯品会Java开发手册》－与阿里手册的比较文学](http://calvin1978.blogcn.com/articles/javaguide4.html)
+15. [知乎千万级高性能长连接网关揭秘](https://zhuanlan.zhihu.com/p/66807833?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)

@@ -22,3 +22,5 @@ tags: go
 10. [golang atomic包的使用](https://www.jianshu.com/p/228c119a7d0e)
 
 11. [我是这样看Go语言设计的优劣](https://zhuanlan.zhihu.com/p/64823525?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+
+12. [知乎千万级高性能长连接网关揭秘](https://faceair.me/)

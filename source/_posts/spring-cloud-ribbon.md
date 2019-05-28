@@ -23,3 +23,4 @@ ribbon是对服务之间调用做负载，是服务之间的负载均衡，zuul�
 
 [Spring Cloud 客服端负载均衡 Ribbon](https://www.cnblogs.com/liferecord/p/6893786.html)
 [SpringCloud系列之服务消费Ribbon和Feign区别](https://blog.csdn.net/q_0718/article/details/80269864)
+[Spring Cloud OpenFeign详解](https://blog.csdn.net/taiyangdao/article/details/81359394)

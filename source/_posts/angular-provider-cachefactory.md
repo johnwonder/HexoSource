@@ -281,3 +281,4 @@ function link(nextEntry, prevEntry) {
 1. [【算法】—— LRU算法](https://www.cnblogs.com/bopo/p/9255654.html)
 2. [缓存淘汰算法--LRU算法](https://flychao88.iteye.com/blog/1977653)
 3. [漫画：什么是LRU算法？](https://mp.weixin.qq.com/s/L-rTC-qlnvKxbwUI1FmeHw)
+4. [头条面试题：如何实现 LRU 原理？](https://mp.weixin.qq.com/s/HE22NfxaCP6p5t39izvWdg)

@@ -9,3 +9,4 @@ tags: Spring
 4. [IDEA阅读spring源码并调试](https://blog.csdn.net/u013310075/article/details/80707098)
 5. [Win10环境编译spring-framework4.1.9版本，报错"Failed to capture snapshot of input files for task 'distZip'"](https://blog.csdn.net/boling_cavalry/article/details/80796059)
 6. [深入剖析 Spring 框架的 BeanFactory](https://www.cnblogs.com/digdeep/p/4518571.html#top)
+7. [深入理解SpringAOP之代理对象](https://www.cnblogs.com/niechen/p/9016816.html)
