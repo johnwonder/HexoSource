@@ -14,3 +14,4 @@ tags: Spring
 9. [spring更好的处理泛型](https://blog.csdn.net/zbw18297786698/article/details/73441623)
 10. [【Spring源码分析】06-ResolvableType](https://blog.csdn.net/shenchaohao12321/article/details/80282833)
 11. [Spring与后端模板引擎的故事](https://www.jianshu.com/p/b90cbd61474a?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+12. [Spring boot源码分析-环境搭建](https://www.cnblogs.com/nicknailo/articles/9221392.html)
