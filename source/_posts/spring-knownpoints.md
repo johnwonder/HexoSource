@@ -15,3 +15,4 @@ tags: Spring
 10. [【Spring源码分析】06-ResolvableType](https://blog.csdn.net/shenchaohao12321/article/details/80282833)
 11. [Spring与后端模板引擎的故事](https://www.jianshu.com/p/b90cbd61474a?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 12. [Spring boot源码分析-环境搭建](https://www.cnblogs.com/nicknailo/articles/9221392.html)
+13. [SpringCloud学习系列汇总](https://mp.weixin.qq.com/s?__biz=MzU5MDgzOTYzMw==&mid=2247484030&idx=1&sn=7ad29239aca876e29155f5b1439281bb&chksm=fe396840c94ee156adfcd44c63a3b5c1cf93805cf592ad7d45bc5222c349ba6f552b553a5c09&scene=21#wechat_redirect)
