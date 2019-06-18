@@ -11,3 +11,4 @@ tags: vue
 6. [剖析 Vue.js 内部运行机制](https://juejin.im/book/5a36661851882538e2259c0f)
 7. [vue数据传递--我有特殊的实现技巧](https://www.cnblogs.com/MrZouJian/p/8645625.html#top)
 8. [金三银四的魔都两年半前端面经](https://zhuanlan.zhihu.com/p/62923353?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+9. [Vue页面骨架屏注入实践](https://segmentfault.com/a/1190000014832185)
