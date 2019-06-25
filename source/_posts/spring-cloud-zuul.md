@@ -8,3 +8,4 @@ tags: SpringCloud
 3. [Spring Cloud (十三) Zuul：静态路由、静态过滤器与动态路由的实现](https://www.cnblogs.com/hellxz/p/9282756.html)
 4. [史上最简单的SpringCloud教程 | 第四篇:断路器（Hystrix）](https://blog.csdn.net/forezp/article/details/69934399)
 5. [Spring Cloud实战小贴士：Ribbon的饥饿加载(eager-load)模式](http://blog.didispace.com/spring-cloud-tips-ribbon-eager/)
+6. [SpringCloud工作笔记069---The Hystrix timeout of 60000ms for the command sc-auth is set lower than the](https://blog.csdn.net/lidew521/article/details/84661158)
