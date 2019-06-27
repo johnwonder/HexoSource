@@ -9,6 +9,12 @@ tags: git
 2. git bash diff
 3. Linux下可以用diff命令
 
+#### git fetch 和git pull 的差别
+
+git fetch 相当于是从远程获取最新到本地，不会自动merge
+
+1. [git fetch 和git pull 的差别](https://www.cnblogs.com/qiu-Ann/p/7902855.html)
+
 #### git删除本地分支并获取tag代码
 
 1. [git删除本地分支出现错误](https://blog.csdn.net/benben_2015/article/details/79782202)
