@@ -6,17 +6,23 @@ tags: angular
 
 ## angular1.5.8 minErr函数
 
+minErr函数名字起的很有创意,我们可以理解为错误函数最小化包装,angularjs内部变量的命名都很规范，
+这已经是是值得我们借鉴的地方。
+
 在运行过程中如果angularjs脚本出现错误,那么在浏览器控制台我们可以看到自定义的错误信息，
 这些信息就是通过这个函数输出的。
+
 
 ### 使用方法
 angular.js内部代码有如下用法：  
 
 ```js
+  //ng参数代表返回的新的minErr实例使用的命名空间
+  //也可以当作是模块。
   ngMinErr  = minErr('ng') //代表是ng模块的错误
 ```
 
-### 函数解读
+### 函数定义
 ```js
   /**
   * @description  描述
@@ -105,10 +111,33 @@ angular.js内部代码有如下用法：
         return new ErrorConstructor(message);
       };
   }
+```
 
+### 关联函数 toDebugString
 
-/* global toDebugString: true */
+```js
+  //输出调试信息
+  function toDebugString(obj) {
+    //用===来判断
+    if (typeof obj === 'function') {
+      return obj.toString().replace(/ \{[\s\S]*$/, '');//把函数体去掉
+    } else if (isUndefined(obj)) {
+      //调用isUndefined函数
+      return 'undefined';
+    } else if (typeof obj !== 'string') {
+      //不是字符串就调用serializeObject函数
+      return serializeObject(obj);
+    }
+    //如果是字符串
+    //就返回obj参数
+    return obj;
+  }
+```
 
+### 关联函数 serializeObject
+
+```js
+  /* global toDebugString: true */
   function serializeObject(obj) {
     var seen = [];
 
@@ -120,7 +149,7 @@ angular.js内部代码有如下用法：
     return JSON.stringify(obj, function(key, val) {
       val = toJsonReplacer(key, val);
       if (isObject(val)) {
-
+        //如果seen中已经存在该值
         if (seen.indexOf(val) >= 0) return '...';//变成省略号
 
         seen.push(val);
@@ -128,17 +157,7 @@ angular.js内部代码有如下用法：
       return val;
     });
   }
-  //输出调试信息
-  function toDebugString(obj) {
-    if (typeof obj === 'function') {
-      return obj.toString().replace(/ \{[\s\S]*$/, '');//把函数体去掉
-    } else if (isUndefined(obj)) {
-      return 'undefined';
-    } else if (typeof obj !== 'string') {
-      return serializeObject(obj);
-    }
-    return obj;
-  }
+
 ```
 
 从这个函数中我们可以学到以下几点

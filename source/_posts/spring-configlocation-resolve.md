@@ -1,0 +1,27 @@
+title: ClassPathXmlApplicationContext中针对configLocation配置路径的解析
+date: 2020-03-22 20:58:00
+tags: Spring
+---
+
+在使用ClassPathXmlApplicationContext 传入配置文件时，解析配置文件的流程如下：
+
+1. AbstractRefreshableConfigApplicationContext.resolvePath
+
+2. getEnvironment() -> createEnvironment() -> StandardEnvironment
+
+3. 实例化StandardEnvironment 时 调用customizePropertySources函数
+
+4. customizePropertySources时加入MapPropertySource ，SystemEnvironmentPropertySource
+
+5. 调用StandardEnvironment父类AbstractEnvironment.resolveRequiredPlaceholders
+
+6. 内部调用PropertySourcesPropertyResolver父类AbstractPropertyResolver的
+resolveRequiredPlaceholders，此时propertySources传入PropertySourcesPropertyResolver
+
+7. 调用doResolvePlaceholders 传入this::getPropertyAsRawString，实际就是
+  ，PropertySourcesPropertyResolver的getProperty方法作为函数式接口PlaceholderResolver的 参数
+
+阅读随记：
+1. CopyOnWriteArrayList 内部indexOf是根据传入的对象的equals方法来比较
+2. PropertySource.named返回的ComparisonPropertySource 只会比较两个对象的name
+3. jdk里AbstractCollection的toString方法

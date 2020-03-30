@@ -25,11 +25,9 @@ injector.invoke(explicit);
 
 ### angular.module函数
 
-核心angular.module方法是通过执行factory函数返回factory内部的函数
-
-调用angular.module('myModule', [])方法的时候已经是执行最内部的函数了
-
-最终演变为modules["myModule"] = factory(); 返回moduleInstance。
+核心angular.module方法是通过执行factory函数返回factory内部的函数,调用
+angular.module('myModule', [])方法的时候已经是执行最内部的函数了,最终演变为
+modules["myModule"] = factory(); 返回moduleInstance。
 
 ```js
 function setupModuleLoader(window) {

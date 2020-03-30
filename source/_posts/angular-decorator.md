@@ -1,12 +1,12 @@
-title: angular_decorator
+title: angular1.5.8源码解析之decorator原理
 date: 2017-03-28 20:56:23
 tags: angular
 ---
 
 
-## angular decorator装饰器
+## angularjs装饰器的使用
 
-先上段代码：  
+我们定义一个模块，并且配置一个configBlocks
 
 ```js
 angular.module('myapp',[]).config(function($provide){
@@ -23,35 +23,41 @@ angular.module('myapp',[]).config(function($provide){
                   }
         });
   });  
-```  
 
-config方法之前也分析过,定义如下：  
+  //调用log函数加上时间戳
+  angular.element(document).injector().get('$log').log('hello')
+```
+
+此处可以有几个疑问：
+1. config函数做了什么?
+2. decorator函数又做了什么?
+3. angular.element(document)为什么能获取injector?
+
+### config函数
 ```js
-/*
-      返回一个方法
+      /*
        方法内部调用configBlocks['push'](['$injector','invoke',arguments])
-       然后返回moduleInstance
-
-       config就是一个返回moduleInstance的函数
+       然后返回moduleInstance，config就是一个返回moduleInstance的函数
      */
      var config = invokeLater('$injector', 'invoke', 'push', configBlocks);
-
-     /**
-        * @param {string} provider
-        * @param {string} method
-        * @param {String=} insertMethod
-        * @returns {angular.Module}
-        */
-       function invokeLater(provider, method, insertMethod, queue) {
+     //此处就是传入配置块
+     if (configFn) {
+          config(configFn);
+     }
+     function invokeLater(provider, method, insertMethod, queue) {
          if (!queue) queue = invokeQueue;
          return function() {
            queue[insertMethod || 'push']([provider, method, arguments]);
            return moduleInstance;
          };
        }
-```  
 
-decorator方法定义如下：  
+```
+模块的config函数就是把参数configBlocks放入configBlocks数组中，然后在loadModules的时候
+调用runInvokeQueue，获取$injectorProvider也就是instanceInjector后调用invoke函数,
+传入```function($provide){}```函数体，最后执行这个函数体。
+
+### $provide.decorator函数  
 
 ```js
 function decorator(serviceName, decorFn) {
@@ -65,32 +71,36 @@ function decorator(serviceName, decorFn) {
 }
 ```  
 
-$log是在`angularModule('ng', ['ngLocale'], ['$provide', function ngModule($provide) {}])`中配置进去的
-
+### $LogProvider
 ```js
   $provide.provider({
      $log: $LogProvider,
-  })
+  });
+
+  function $LogProvider() {
+  var debug = true,
+      self = this;
+      this.$get = ['$window', function($window) {
+
+          return {
+            log:consoleLog('log')
+            //省略部分代码
+          }
+      }]
+    }
 ```  
+执行decorator方法的时候先获取原来的$logProvider和它的$get属性，然后重新赋值$logProvider的
+$get属性，把原来的$get属性放入新的$get函数内。
 
-$LogProvider在line 13900,定义如下：
-```js
-function $LogProvider() {
-var debug = true,
-    self = this;
-    this.$get = ['$window', function($window) {}]
-  }
-```
+最终调用instanceInjector的getService方法获取，内部先从providerCache中获取后，再调用
+对应$logProvider的新的$get函数，函数内部首先调用原先保存的旧的$get属性，获取原来的```{log:consoleLog('log')}```,
+然后调用decorFn,传入```{$delegate: origInstance}```,最后就是对原来的$log实例的属性函数做了修改。
 
-最终都是调用instanceInjector的getService方法获取
-```js
-protoInstanceInjector =
-          createInternalInjector(instanceCache, function(serviceName, caller) {
+装饰器设计模式就是如此奇妙！
 
-            //去providerCache里去找
-            var provider = providerInjector.get(serviceName + providerSuffix, caller);
-            return instanceInjector.invoke(
-                provider.$get, provider, undefined, serviceName);
-            //$get 各个provider定义的$get 方法
-          })
-```
+文章末尾彩蛋：
+### $rootElement.data函数
+
+在angular调用```doBootstrap```启动函数的时候，内部会调用```element.data('$injector', injector);```
+把创建好的instanceInjector放入element的data缓存中，所以能直接调用injector()函数，此部分的
+源码设计我们会在之后的文章中进行剖析。

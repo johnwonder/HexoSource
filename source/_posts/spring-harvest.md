@@ -6,7 +6,7 @@ tags: Spring
 
 ## static 静态代码块
 
-```org.springframework.util.ClassUtils``` 抽象类里包含了static静态代码初始化块。
+`org.springframework.util.ClassUtils`  抽象类里包含了static静态代码初始化块。
 
 ```java
 static {

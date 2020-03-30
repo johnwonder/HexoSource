@@ -86,6 +86,11 @@ scope.$watch(interpolateFn, function interpolateFnWatchAction(value) {
 因为带有watchDelegate,所以直接调用watchDelegate返回:
 
 ```js
+//如果被解析过后的watch函数有watch的代理那就返回这个代理watch函数
+//
+//会创建一个watcher
+//watcher里放入listener(类似spring里的监听器)
+//数据变化时会触发listener
 $watch: function(watchExp, listener, objectEquality, prettyPrintExpression) {
         var get = $parse(watchExp);//watchExp为函数时直接返回watchExp
 

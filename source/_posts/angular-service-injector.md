@@ -1,26 +1,13 @@
-title: angular_service_injector
+title: angularjs 1.5.8源码解析之service到底干了什么
 date: 2017-07-01 22:13:53
 tags: angular
 ---
 
-## angular service注入解析
+## $provide.service函数
 
-### setupModuleLoader
-
-setupModuleLoader方法中定义了module的service方法
-
-```js
-/**
-           * @ngdoc method
-           * @name angular.Module#service
-           * @module ng
-           * @param {string} name service name
-           * @param {Function} constructor A constructor function that will be instantiated.
-           * @description
-           * See {@link auto.$provide#service $provide.service()}.
-           */
-    service: invokeLaterAndSetModuleName('$provide', 'service'),
-```
+上篇文章[创建service](https://mp.weixin.qq.com/s/B3-VS8jnOSOKtDz91rtP0g)最后我们提到了
+$provide.service,也就是说模块调用service方法 其实内部到loadModules的时候通过runInvokeQueue
+会调用内置的$provide.service函数。
 
 比如我写了个方法如下：
 ```js
@@ -28,30 +15,73 @@ var herModule = angular.module('herModule', []);
 herModule.service('herService', function() {
     this.her = 1;
 });
-var injector = angular.injector(["herModule"]);
 ```
+我们一步步来分析它是怎么调用的，首先看第一步
 
-### runInvokeQueue
+### provideCache
 
-调用angular.injector([])时，就会调用
+我们在之前的文章[依赖注入器的产生](https://mp.weixin.qq.com/s/1IUhjOQoVfEdds0nt-8Hlw)中看到createInjector的时候会把provideCache传入providerInjector，也就是说我们在调用```providerInjector.get('$provide')```的时候会从provideCache中去拿$provide,看下providerCache的定义。
 
 ```js
-function runInvokeQueue(queue) {
-      var i, ii;
-      for (i = 0, ii = queue.length; i < ii; i++) {
-        var invokeArgs = queue[i],
-            provider = providerInjector.get(invokeArgs[0]);
-            //getService 通过providerCache寻找
-               //console.log(invokeArgs[0]); -- $injector  $controllerProvider
-        //console.log('invokeArgs[2][0]:'+invokeArgs[2][0]);
-        //console.log(invokeArgs[1]);  -- invoke
-        provider[invokeArgs[1]].apply(provider, invokeArgs[2]);
-
-      }
+    function supportObject(delegate) {
+       return function(key, value) {       
+         //当key是 对象的时候 就把delegate函数放入闭包里
+         if (isObject(key)) {
+           //reverseParams 为了适应foreach里调用函数的参数顺序
+           forEach(key, reverseParams(delegate));// function(value, key) {iteratorFn(key, value);};
+         } else {
+            //调用参数delegate方法
+           return delegate(key, value);
+         }
+       };
     }
+    var providerCache = {
+       //supportObject 都返回一个新函数,内部调用service
+       $provide: {
+           service: supportObject(service),
+           //省略部分代码
+         }
+     }
 ```
 
-### $provide.service
+$provide对象不止有service一个属性函数，supportObject 都返回一个新函数,内部调用service。
+
+### 内部service函数
+
+service函数内部其实就是调用factory函数
+```js
+  function service(name, constructor) {
+     //factoryFn就是个对象数组
+    return factory(name, ['$injector', function($injector) {
+      //实例化构造函数，返回实例
+      return $injector.instantiate(constructor);
+    }]);
+  }
+```
+
+### 内部factory函数
+
+factory函数内部又调用provider函数
+```js
+//factoryFn有可能就是对象数组
+//enforce代表是否要有返回值
+function factory(name, factoryFn, enforce) {
+  return provider(name, {
+    $get: enforce !== false ? enforceReturnValue(name, factoryFn) : factoryFn
+  });
+}
+
+//返回一个有返回值的方法而已
+  function enforceReturnValue(name, factory) {
+    return function enforcedReturnValue() {
+      var result = instanceInjector.invoke(factory, this);
+
+      return result;
+    };
+  }
+```
+
+### 内部provider函数
 
 ```js
 function provider(name, provider_) {
@@ -59,36 +89,8 @@ function provider(name, provider_) {
     if (isFunction(provider_) || isArray(provider_)) {
       provider_ = providerInjector.instantiate(provider_);
     }
-    if (!provider_.$get) {
-      throw $injectorMinErr('pget', "Provider '{0}' must define $get factory method.", name);
-    }
     return providerCache[name + providerSuffix] = provider_;
-  }
-
-//返回一个方法而已
-  function enforceReturnValue(name, factory) {
-    return function enforcedReturnValue() {
-      var result = instanceInjector.invoke(factory, this);
-      if (isUndefined(result)) {
-        throw $injectorMinErr('undef', "Provider '{0}' must return a value from $get factory method.", name);
-      }
-      return result;
-    };
-  }
-
-  function factory(name, factoryFn, enforce) {
-    return provider(name, {
-      $get: enforce !== false ? enforceReturnValue(name, factoryFn) : factoryFn
-    });
-  }
-
-  function service(name, constructor) {
-    return factory(name, ['$injector', function($injector) {
-      return $injector.instantiate(constructor);
-    }]);
   }
 ```
 
-其中最终调用的就是provider方法把service放入providerCache
-
-先调用service方法放入invokeQueue,然后在angular.injector(["herModule"])放入providerCache,然后在get的时候从providerCache中取出。
+其中最终调用的就是provider方法把一开始的serviceName加上providerSuffix当作对象key，然后```{$get:['$injector', function($injector) {return $injector.instantiate(constructor);}]}```放入了providerCache。
